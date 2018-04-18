@@ -1,3 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,300i,400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+
 body {
-  background-color: red;
+  font-family: "Open Sans", serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  background: linear-gradient(to right, #e67e22, #e74c3c);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-container {
+  height: 90vh;
+  background: url("../images/im58137488.jpg") center center no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 13px 40px -13px rgba(0,0,0,0.75);
+}
+
+.title-container-title {
+  font-size: 50px;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  font-family: 'Roboto Slab', serif;
+}
+
+.title-container-subtitle {
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 25px;
+  font-family: "Merriweather", serif;
+}
+
+
+input[type="text"] {
+  background-color: transparent;
+  border: 0;
+  border-bottom: solid 1px #fff;
+  width: 30%;
+  padding-bottom: 4px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  font-size: 20px;
+  outline: none ;
+}
+
+input[type="text"]::placeholder {
+  color: #fff;
+}
+
+input[type="text"]:focus{
+  box-shadow: inset 1px 1px 20px #cb6f1e,
+  1px 1px 50px #9b4f1a;
+}
+
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 1px 1px 30px #9b4f1a inset;
+  -webkit-text-fill-color:#e67e22
+}
+
+button {
+  border: 0;
+  padding: 8px 20px;
+  margin: 0 2px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #f16051;
+  color: #fff;
+  font-weight: 100;
+}
+
+button:active {
+  outline: none;
+}
+button:focus {
+  outline: none;
+  box-shadow: inset 1px 1px 50px #9b4f1a;
 }
