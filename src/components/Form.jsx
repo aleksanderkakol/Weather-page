@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+
 export class Form extends React.Component {
 
    constructor(props){
@@ -8,10 +10,10 @@ export class Form extends React.Component {
      }
    render() {
      return (
-         <form onSubmit={this.props.weather}>
+         <form className='form-container' autoComplete='off' onSubmit={this.props.weather}>
              <input type="text" name='city' placeholder='city'/>
              <input type="text" name='country' placeholder='country'/>
-             <button>Get weather</button>
+             <button>Search</button>
          </form>
      )
    }

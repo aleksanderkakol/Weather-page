@@ -8,7 +8,7 @@ export class Weather extends React.Component {
      }
    render() {
      return (
-       <div>
+       <div className='weather'>
            {this.props.city&&this.props.country&&<p>Location: {this.props.city}, {this.props.country}</p>}
            {this.props.temperature&&<p>Temperature: {this.props.temperature} &deg;C</p>}
            {this.props.wind&&<p>Wind: {this.props.wind} m/s</p>}

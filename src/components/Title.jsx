@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WeatherIcons from './WeatherIcons.jsx';
 
 export class Title extends React.Component {
 
@@ -10,7 +11,8 @@ export class Title extends React.Component {
      return (
        <div className='title-container'>
            <h1 className='title-container-title'>Weather</h1>
-           <p className='title-container-subtitle'>Find out temperature</p>
+           <p className='title-container-subtitle'>Check out temperature</p>
+           <WeatherIcons descript={this.props.descript}/>
        </div>
      )
    }

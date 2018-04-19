@@ -4,10 +4,8 @@ import ReactDOM from 'react-dom';
 require('./scss/main.scss');
 
 import Title from './components/Title.jsx';
-import MyComponent from './components/Fonts.jsx';
 import Weather from './components/Weather.jsx';
 import Form from './components/Form.jsx';
-
 
 
 const apiKey = 'bcce9d69101131470e5b5c35c4281783';
@@ -24,7 +22,7 @@ class App extends React.Component {
          error:''
      }
    }
-
+ 
    weather = async (e) => {
        e.preventDefault();
        const city = e.target.elements.city.value;
@@ -55,10 +53,9 @@ class App extends React.Component {
 
    render() {
        return (
-           <div>
-                <Title />
-                {/*<MyComponent style={{}} />*/}
-                <Form weather={this.weather} />
+           <div className='main'>
+                <Title descript={this.state.descript}/>
+                <Form weather={this.weather}/>
                <Weather temperature={this.state.temperature} city={this.state.city} country={this.state.country} wind={this.state.wind} descript={this.state.descript} error={this.state.error}/>
            </div>
        )
