@@ -29,7 +29,7 @@ class App extends React.Component {
        const country = e.target.elements.country.value;
        const url = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
        const data = await url.json();
-       console.log(data);
+       // console.log(data);
        if(city&&country){
        this.setState({
            temperature: data.main.temp,
@@ -51,12 +51,58 @@ class App extends React.Component {
        }
    };
 
+   componentWillMount = () => {
+       const options = {
+           enableHighAccuracy: true,
+           timeout: 50000,
+           maximumAge: 0
+       };
+       const that = this;
+
+       async function success(pos) {
+           let crd = pos.coords;
+
+           const link = (`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
+
+           console.log('Your current position is:');
+           console.log(`Latitude : ${crd.latitude}`);
+           console.log(`Longitude: ${crd.longitude}`);
+           console.log(`More or less ${crd.accuracy} meters.`);
+
+
+
+           const links = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
+           const datas = links.json();
+           // console.log(datas);
+           datas.then((result) => {
+               // console.log(result);
+               // console.log(that);
+
+               that.setState({
+                   temperature: result.main.temp,
+                   city: result.name,
+                   country: result.sys.country,
+                   wind: result.wind.speed,
+                   descript: result.weather[0].description
+               });
+
+           });
+       }
+
+       function error(err) {
+           console.warn(`ERROR(${err.code}): ${err.message}`);
+       }
+
+       navigator.geolocation.getCurrentPosition(success, error, options);
+   };
+
    render() {
        return (
            <div className='main'>
                 <Title descript={this.state.descript}/>
                 <Form weather={this.weather}/>
-               <Weather temperature={this.state.temperature} city={this.state.city} country={this.state.country} wind={this.state.wind} descript={this.state.descript} error={this.state.error}/>
+               <Weather temperature={this.state.temperature} city={this.state.city} country={this.state.country} wind={this.state.wind} descript={this.state.descript.toUpperCase()} error={this.state.error}/>
+
            </div>
        )
    }
