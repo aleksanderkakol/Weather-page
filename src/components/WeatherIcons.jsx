@@ -5,7 +5,7 @@ class WeatherIcons extends React.Component {
         super(props);
     }
     render(){
-        console.log(this.props.descript);
+        // console.log(this.props.descript);
         return (
             <div className='WeatherIcons'>
 

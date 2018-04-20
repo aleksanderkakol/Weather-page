@@ -22,7 +22,7 @@ class App extends React.Component {
          error:''
      }
    }
- 
+
    weather = async (e) => {
        e.preventDefault();
        const city = e.target.elements.city.value;
@@ -62,14 +62,10 @@ class App extends React.Component {
        async function success(pos) {
            let crd = pos.coords;
 
-           const link = (`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
-
-           console.log('Your current position is:');
-           console.log(`Latitude : ${crd.latitude}`);
-           console.log(`Longitude: ${crd.longitude}`);
-           console.log(`More or less ${crd.accuracy} meters.`);
-
-
+           // const link = (`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
+           // console.log(`Latitude : ${crd.latitude}`);
+           // console.log(`Longitude: ${crd.longitude}`);
+           // console.log(`More or less ${crd.accuracy} meters.`);
 
            const links = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
            const datas = links.json();
