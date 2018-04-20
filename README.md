@@ -1,7 +1,6 @@
 # Weather 
 
-### **Live demo:**[Here](https://aleksanderkakol.github.io/page-image/disttarget="_blank")
-
+### **Live demo:**[Here](https://aleksanderkakol.github.io/page-image/dist" target="_blank)
 
 
 ## Installation
