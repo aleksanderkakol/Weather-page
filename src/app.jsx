@@ -27,7 +27,7 @@ class App extends React.Component {
        e.preventDefault();
        const city = e.target.elements.city.value;
        const country = e.target.elements.country.value;
-       const url = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
+       const url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
        const data = await url.json();
        // console.log(data);
        if(city&&country){
@@ -67,7 +67,7 @@ class App extends React.Component {
            // console.log(`Longitude: ${crd.longitude}`);
            // console.log(`More or less ${crd.accuracy} meters.`);
 
-           const links = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
+           const links = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=${apiKey}&units=metric`);
            const datas = links.json();
            // console.log(datas);
            datas.then((result) => {
