@@ -17,5 +17,4 @@ export class Title extends React.Component {
      )
    }
 }
-
 export default Title;

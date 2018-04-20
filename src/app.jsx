@@ -2,11 +2,9 @@ import 'babel-polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
 require('./scss/main.scss');
-
 import Title from './components/Title.jsx';
 import Weather from './components/Weather.jsx';
 import Form from './components/Form.jsx';
-
 
 const apiKey = 'bcce9d69101131470e5b5c35c4281783';
 
@@ -25,11 +23,13 @@ class App extends React.Component {
 
    weather = async (e) => {
        e.preventDefault();
+
        const city = e.target.elements.city.value;
        const country = e.target.elements.country.value;
        const url = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
        const data = await url.json();
        // console.log(data);
+
        if(city&&country){
        this.setState({
            temperature: data.main.temp,

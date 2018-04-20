@@ -95,6 +95,13 @@ class WeatherIcons extends React.Component {
                         <div className="bolt"> </div>
                     </div>
                 </div>:null}
+                {this.props.descript==="thunderstorm"?<div className="icons">
+                    <div className="cloud"> </div>
+                    <div className="lightning">
+                        <div className="bolt"> </div>
+                        <div className="bolt"> </div>
+                    </div>
+                </div>:null}
 
                 {/*///--------LIGHT----RAIN-------------*/}
 
@@ -123,5 +130,4 @@ class WeatherIcons extends React.Component {
         )
     }
 }
-
 export default WeatherIcons;
